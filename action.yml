@@ -1,0 +1,30 @@
+name: 'Create new project'
+description: 'Creates new project from a clone of this repository.'
+
+inputs:
+  project:
+    required: true
+    description: Name of the project to create
+
+#outputs:
+#  repo-url:
+#    description: 'URL of the created repository'
+#    value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Download repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        fetch-depth: 0
+    - name: Create new repository and push contents
+      run: gh repo create ${{ github.event.inputs.project }} --private --source=. --push --remote=upstream
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      shell: bash
+
+### Token:
+# all repo
+# all workflow
+# write:org    -
