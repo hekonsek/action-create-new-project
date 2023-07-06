@@ -2,23 +2,18 @@ name: Create new project
 
 on:
   workflow_dispatch:
+    inputs:
+      project:
+        required: true
+        type: string
+        description: Name of the project to create
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: hekonsek/action-create-new-project
       with:
+        project: deleteme-${{ github.event.inputs.project }}
         token: ${{ secrets.GH_TOKEN }}
-        fetch-depth: 0
-    - name: Create new repository
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: | 
-        gh repo create testing-$RANDOM --private --source=. --push --remote=upstream 
-
-### Token:
-# all repo
-# all workflow
-# write:org

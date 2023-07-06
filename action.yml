@@ -5,6 +5,9 @@ inputs:
   project:
     required: true
     description: Name of the project to create
+  token:
+    required: true
+    description: GitHub token
 
 #outputs:
 #  repo-url:
@@ -16,7 +19,7 @@ runs:
     - name: Download repository
       uses: actions/checkout@v3
       with:
-        token: ${{ secrets.GH_TOKEN }}
+        token: ${{ github.event.inputs.token }}
         fetch-depth: 0
     - name: Create new repository and push contents
       run: gh repo create ${{ github.event.inputs.project }} --private --source=. --push --remote=upstream
