@@ -24,7 +24,7 @@ runs:
     - name: Create new repository and push contents
       run: gh repo create ${{ github.event.inputs.project }} --private --source=. --push --remote=upstream
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ github.event.inputs.token }}
       shell: bash
 
 ### Token:
