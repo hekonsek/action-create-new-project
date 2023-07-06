@@ -19,7 +19,7 @@ runs:
     - name: Download repository
       uses: actions/checkout@v3
       with:
-        token: '${{ inputs.token }}
+        token: ${{ inputs.token }}
         fetch-depth: 0
     - name: Create new repository and push contents
       run: gh repo create ${{ inputs.project }} --private --source=. --push --remote=upstream
