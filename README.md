@@ -14,3 +14,9 @@ This time-saving aspect is particularly valuable when working on Proof of Concep
 | --- | --- | --- | --- |
 | project | Name of the new project to be created. | `true` |  |
 | token | GitHub token. Should have the following permissions: `all repo`, `all workflow`, `write:org` . | `true` |  |
+
+## Outputs
+
+| parameter | description |
+| --- | --- |
+| repository | Created repository in owner/repo format. |
