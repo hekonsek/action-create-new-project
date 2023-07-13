@@ -1,13 +1,13 @@
 name: 'Create new project'
-description: 'Creates new project from a clone of this repository.'
+description: 'This GitHub Action enables you to create new GitHub projects using your current project as a template. It simplifies the process of creating new projects for your development team by providing predefined templates. When triggered, this action creates a new GitHub project by duplicating the current project's structure and files.'
 
 inputs:
   project:
     required: true
-    description: Name of the project to create
+    description: Name of the new project to be created.
   token:
     required: true
-    description: GitHub token
+    description: 'GitHub token. Should have the following permissions: `all repo`, `all workflow`, `write:org` .''
 outputs:
  repository:
    description: 'Created repository in owner/repo format.'
@@ -26,8 +26,3 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.token }}
       shell: bash
-
-### Token:
-# all repo
-# all workflow
-# write:org
