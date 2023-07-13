@@ -1,5 +1,5 @@
 name: 'Create new project'
-description: 'This GitHub Action enables you to create new GitHub projects using your current project as a template. It simplifies the process of creating new projects for your development team by providing predefined templates. When triggered, this action creates a new GitHub project by duplicating the current project's structure and files.'
+description: "This GitHub Action enables you to create new GitHub projects using your current project as a template. It simplifies the process of creating new projects for your development team by providing predefined templates. When triggered, this action creates a new GitHub project by duplicating the current project\'s structure and files."
 
 inputs:
   project:
