@@ -7,7 +7,7 @@ inputs:
     description: Name of the new project to be created.
   token:
     required: true
-    description: 'GitHub token. Should have the following permissions: `all repo`, `all workflow`, `write:org` .''
+    description: 'GitHub token. Should have the following permissions: `all repo`, `all workflow`, `write:org` .'
 outputs:
   repository:
     description: 'Created repository in owner/repo format.'

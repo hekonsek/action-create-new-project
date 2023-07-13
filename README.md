@@ -12,5 +12,5 @@ This time-saving aspect is particularly valuable when working on Proof of Concep
 
 | parameter | description | required | default |
 | --- | --- | --- | --- |
-| project | Name of the project to create | `true` |  |
-| token | GitHub token | `true` |  |
+| project | Name of the new project to be created. | `true` |  |
+| token | GitHub token. Should have the following permissions: `all repo`, `all workflow`, `write:org` . | `true` |  |
