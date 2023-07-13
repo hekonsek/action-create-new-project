@@ -9,7 +9,7 @@ on:
         description: Name of the project to create
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
