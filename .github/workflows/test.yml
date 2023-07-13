@@ -18,4 +18,4 @@ jobs:
       with:
         project: deleteme-${{ github.event.inputs.project }}
         token: ${{ secrets.GH_TOKEN }}
-    - run: echo ${{ steps.create.outputs }}    
+    - run: echo ${{ steps.create.outputs.repository }}    

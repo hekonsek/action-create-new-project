@@ -9,7 +9,7 @@ inputs:
     required: true
     description: GitHub token
 outputs:
- repo:
+ repository:
    description: 'Created repository in owner/repo format.'
    value: ${{ github.repository_owner	 }}/${{ inputs.project }}
 
