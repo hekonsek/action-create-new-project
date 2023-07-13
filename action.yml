@@ -9,9 +9,9 @@ inputs:
     required: true
     description: 'GitHub token. Should have the following permissions: `all repo`, `all workflow`, `write:org` .''
 outputs:
- repository:
-   description: 'Created repository in owner/repo format.'
-   value: ${{ github.repository_owner	 }}/${{ inputs.project }}
+  repository:
+    description: 'Created repository in owner/repo format.'
+    value: ${{ github.repository_owner	 }}/${{ inputs.project }}
 
 runs:
   using: 'composite'
