@@ -8,11 +8,11 @@ inputs:
   token:
     required: true
     description: GitHub token
+outputs:
+ repo:
+   description: 'Created repository in owner/repo format.'
+   value: ${{ github.repository_owner	 }}/${{ inputs.project }}
 
-#outputs:
-#  repo-url:
-#    description: 'URL of the created repository'
-#    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: 'composite'
   steps:
@@ -30,4 +30,4 @@ runs:
 ### Token:
 # all repo
 # all workflow
-# write:org    -
+# write:org
