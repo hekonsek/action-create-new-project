@@ -8,6 +8,34 @@ It allows you to establish a consistent project setup across your organization o
 
 This time-saving aspect is particularly valuable when working on Proof of Concepts (POCs) and spikes. Instead of starting each POC or spike from scratch, you can use this action to quickly spin up new projects based on your existing template. This helps you focus more on the core objectives of your POC or spike rather than spending time on project setup. By leveraging the predefined templates, you can ensure that all POCs and spikes follow a standardized structure and have the necessary configurations in place. This promotes better collaboration, improves efficiency, and allows you to iterate faster on your ideas.
 
+## Usage
+
+The following workflow added to your project enables you to use it as a copy template:
+
+```
+name: Create new project
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        required: true
+        type: string
+        description: Name of the project to create
+
+jobs:
+  create-new-project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - id: create
+      uses: hekonsek/action-create-new-project@main
+      with:
+        project: deleteme-${{ github.event.inputs.project }}
+        token: ${{ secrets.GH_TOKEN }}
+    - run: echo ${{ steps.create.outputs.repository }}    
+```
+
 ## Inputs
 
 | parameter | description | required | default |
