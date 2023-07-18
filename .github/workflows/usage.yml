@@ -1,0 +1,21 @@
+name: Create new project
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        required: true
+        type: string
+        description: Name of the project to create
+
+jobs:
+  create-new-project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - id: create
+      uses: hekonsek/action-create-new-project@v0.3.0
+      with:
+        project: deleteme-${{ github.event.inputs.project }}
+        token: ${{ secrets.GH_TOKEN }}
+    - run: echo ${{ steps.create.outputs.repository }}

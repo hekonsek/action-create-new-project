@@ -29,7 +29,7 @@ jobs:
 
     steps:
     - id: create
-      uses: hekonsek/action-create-new-project@main
+      uses: hekonsek/action-create-new-project@v0.3.0
       with:
         project: deleteme-${{ github.event.inputs.project }}
         token: ${{ secrets.GH_TOKEN }}
